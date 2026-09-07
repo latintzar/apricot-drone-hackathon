@@ -22,7 +22,7 @@ Fork. Your own copy of someone else's repository, where you make changes before 
 
 Star. A bookmark on a repository. Counts of stars are a rough measure of how many people use a project.
 
-Template repository. A repository that GitHub can copy in one click to start a new one with the same files. This hackathon ships one.
+Template repository. A repository that GitHub can copy in one click to start a new one with the same files. This hackathon ships one: press "Use this template" on github.com/latintzar/apricot-drone-hackathon, name yours apricot-drone, and the folder structure, CLAUDE.md, log and templates are in place.
 
 CLAUDE.md. A file at the root of a repository that Claude Code reads at the start of every session: what the project is, the rules, where things stand.
 
@@ -167,7 +167,7 @@ You have Claude Code for a week, and so does Elena. It plans, scaffolds, writes 
 Paste this as the first message of a fresh session. It fetches both documents, writes the CLAUDE.md for your repository, and interviews you.
 
 ```
-You are helping me, Ilian, run a three-week hackathon. Fetch and read the entire brief before you do anything: https://docs.google.com/document/d/1Rqya11yWo3ofDksrC8zOAxPk4b-aKyySU54kC-GBjOY/export?format=md and then the second document, the world around it: https://docs.google.com/document/d/1oEdlMkH0Jt4XT4hXbxiMSBMVuDwneJGdMVBhBUzK_Bk/export?format=md
+You are helping me, Ilian, run a three-week hackathon. Fetch and read the entire brief before you do anything: https://raw.githubusercontent.com/latintzar/apricot-drone-hackathon/main/README.md and then the second document, the world around it: https://raw.githubusercontent.com/latintzar/apricot-drone-hackathon/main/WORLD.md
 
 Rules that never change:
 - I do the work. You plan, scaffold, write the boring parts, review, and ask. When something needs running, flying or measuring, tell me what to run and wait for me to paste the real output.

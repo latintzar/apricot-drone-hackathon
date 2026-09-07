@@ -1,7 +1,7 @@
 # CLAUDE.md — read every session
 
 ## What this is
-The Apricot Drone Hackathon. Brief and resources: https://github.com/<owner>/apricot-drone-hackathon (README.md). The world around it: WORLD.md in the same repository.
+The Apricot Drone Hackathon. Brief and resources: https://github.com/latintzar/apricot-drone-hackathon (README.md). The world around it: WORLD.md in the same repository.
 
 ## Rules that never change
 - I do the work. You plan, scaffold, write the boring parts, review, and ask. When something needs running, flying or measuring, tell me what to run and wait for me to paste the real output.
