@@ -1,8 +1,31 @@
 # The Apricot Drone Hackathon
 
-Brief for Ilian. Two weeks. One open-source project, published. The submission is the link to the repository. September 2026.
+**Challenge.** Build an open-source system for a drone that surveys a small apricot orchard, shows a colour-coded risk map per tree in a web console, circles the trees a person approves for close-ups, files the photos per tree, and sprays a chosen tree on a tap with live progress and a stop button.
 
-## Definitions
+**Format.** Remote, one participant with an optional partner, two weeks, hardware you already own. **Submission:** the link to a public GitHub repository. **Start:** press "Use this template" on this repository and name yours `apricot-drone`.
+
+| | |
+|---|---|
+| Kickoff | Day 0, the day you create your repository |
+| Check-ins | Twenty minutes a week on a screen share, plus an issue titled "done" at the end of each level |
+| Submission | Day 14, the repository link, the two-minute video and the project page |
+| Demo | Day 15, the replay and the live demo, on a call |
+| Continuation | Weekends during term for level two; level three in spring |
+
+## Contents
+
+1. [Definitions](#1-definitions)
+2. [What to build](#2-what-to-build)
+3. [Tracks and judging](#3-tracks-and-judging)
+4. [Rules](#4-rules)
+5. [What to submit](#5-what-to-submit)
+6. [Schedule](#6-schedule)
+7. [Starter kit](#7-starter-kit)
+8. [Resources](#8-resources)
+9. [FAQ](#9-faq)
+10. [Appendix: datasets, full list](#appendix)
+
+## 1. Definitions
 
 Open source. Software whose code is public, under a licence that lets anyone read, use, change and share it. Most of the tools in this brief are open source. This project will be too.
 
@@ -56,9 +79,7 @@ Field note. One file per flight: conditions, plan, what happened, numbers, what 
 
 Replay. A recorded flight anyone can run through the software on a laptop with no drone.
 
-## What to achieve
-
-### What to build
+## 2. What to build
 
 An open-source system for a drone that:
 
@@ -75,7 +96,9 @@ The finish line is a public repository that a stranger can open, understand in a
 
 The first orchard is your aunt's garden in the Czech Republic. Your uncle flies it there from a one-page pack you write. The aircraft, camera, sprayer and laptop are the ones you have; this brief describes the function and never the parts. Day one is finding out exactly what you have and writing it down.
 
-### The three levels
+## 3. Tracks and judging
+
+Three levels. Each is complete before the next starts. Level one complete is a pass. Level two complete is a strong submission. Level three is scheduled for spring.
 
 Level one, survey and console. Grid flight at fixed height, geotagged photos, orthomosaic, tree crowns found, each tree given a number that stays the same on every flight. Each crown cropped and sent to a vision model with one question: what do you see, how sure are you, which of these diseases could it be. The answers colour the map and label each tree. The console shows the map, the proposals, and the taps. On day one the model is a small open vision model on your laptop through Ollama. Done when: the map is coloured from a real flight and a tap produces a mission file.
 
@@ -85,20 +108,16 @@ Level three, treatment. The spray command executes on the sprayer the aircraft h
 
 If the model sees nothing useful from the air, write that in the log with the images that show it. The console with a person deciding remains the product.
 
-## What to submit
+Judging rubric, applied to the repository as submitted:
 
-The submission is one link: the public repository. It has to contain the following, and the judging is on the four rules below.
+| Criterion | Weight | What is checked |
+|---|---|---|
+| It works | 40 | The replay runs on a laptop in five minutes with no drone. A real flight is documented in a field note with numbers. |
+| A stranger understands it in a minute | 20 | The README opens with the story, states what it is in one sentence, shows a real image, and states what works and what does not. |
+| It is honest | 20 | Every number was measured. Unfinished work says so. The failure gallery exists. |
+| Someone else could build it | 20 | HARDWARE.md with exact parts and prices, LEGAL.md, the instructional pack, a pinned environment. |
 
-### Deliverables
-
-1. The repository, public from day one. README with a story at the top, a true status line, a five-minute replay, the console, the mission code, the model with its training runs and failure gallery, HARDWARE.md with parts and prices, LEGAL.md, field notes, and the one-page pack for your uncle.
-2. A two-minute video: takeoff, the console, a tap, the aircraft moving, the close-up appearing.
-3. A media folder collected from day one: the aircraft on the grass with the orchard behind it, a ten-second takeoff clip, a screen recording of the console and one of the gallery saved as GIFs, the orthomosaic, a sick tree beside a healthy one, the failure gallery as a nine-image grid, the training curve, the wiring labelled, your uncle holding the pack next to the aircraft, the spray test. Phone in landscape, raw files kept.
-4. LOG.md. One entry per shipped thing: date, what shipped, what broke, the number that changed, one photo.
-5. Reflections. One per part, on the template in the guidance section.
-6. The project page and four Substack posts.
-
-### Rules
+## 4. Rules
 
 1. The repository is public from day one and says nothing flies yet.
 2. Something ships every three days. A shipped thing is a commit, a log entry and a picture.
@@ -108,7 +127,18 @@ The submission is one link: the public repository. It has to contain the followi
 6. Judged on four things in order: it works; a stranger understands it in a minute; it is honest; someone else could build it from what you wrote.
 7. Elena joins on any piece she picks. The console is the natural one. Her name goes on the repository for what she built.
 
-### The two weeks
+## 5. What to submit
+
+One link: the public repository. It contains:
+
+1. The repository, public from day one. README with a story at the top, a true status line, a five-minute replay, the console, the mission code, the model with its training runs and failure gallery, HARDWARE.md with parts and prices, LEGAL.md, field notes, and the one-page pack for your uncle.
+2. A two-minute video: takeoff, the console, a tap, the aircraft moving, the close-up appearing.
+3. A media folder collected from day one: the aircraft on the grass with the orchard behind it, a ten-second takeoff clip, a screen recording of the console and one of the gallery saved as GIFs, the orthomosaic, a sick tree beside a healthy one, the failure gallery as a nine-image grid, the training curve, the wiring labelled, your uncle holding the pack next to the aircraft, the spray test. Phone in landscape, raw files kept.
+4. LOG.md. One entry per shipped thing: date, what shipped, what broke, the number that changed, one photo.
+5. Reflections. One per part, on the template in the guidance section.
+6. The project page and four Substack posts.
+
+## 6. Schedule
 
 Days 1 to 2. Identify the aircraft, flight stack, camera path and sprayer. Get camera and GPS into your own code. Repository public, story and status line written. Console sketched on paper: the map, the trees, the three taps.
 
@@ -122,7 +152,18 @@ Term time, weekends: the model re-reading close-ups, the detector improving, the
 
 Each level closes with an issue on the repository titled "done", stating what works, what does not, and linking the field note. Twenty minutes a week on a screen share with me.
 
-## How to approach it
+## 7. Starter kit
+
+The `template/` folder in this repository. Press "Use this template" to get a repository with:
+
+- `CLAUDE.md` with the rules for Claude Code and the day-one ground-truth slots to fill.
+- `LOG.md`, `LEGAL.md`, `HARDWARE.md`, `docs/field-notes/TEMPLATE.md`, `reflections/TEMPLATE.md`, `media/SHOT-LIST.md`.
+- The folder structure: `aircraft/`, `console/`, `perception/`, `reasoning/`, `replay/`, `docs/`, `tests/`.
+- A `Makefile` with `make replay` and `make test` stubs, `.env.example`, `.gitignore`.
+
+Datasets and open-source building blocks are in section 8 and the appendix. Every link was fetched and checked on 6 to 7 September 2026.
+
+## 8. Resources
 
 ### Where the brain lives
 
@@ -220,6 +261,22 @@ Law. Article 9 of EU Directive 2009/128 requires member states to prohibit aeria
 Search. Google Scholar: apricot "brown rot" OR "shot hole" detection UAV deep learning. GitHub: orchard drone stars:>5 pushed:>2025-01-01; path:*.py "do_orbit". Roboflow: class:"apricot leaf". Zenodo API: zenodo.org/api/records?q=orthomosaic+AND+orchard&type=dataset. Czech terms: peckoviny, meruňka, moniliová spála peckovin, suchá skvrnitost listů peckovin, šarka. Portal: rlportal.ukzuz.cz.
 
 Two things that eat time: installing Detectron2, so use DeepForest boxes unless they fail; adopting ROS 2, which MAVSDK makes unnecessary. Two things that save time: the SIH simulator; logging the tree number at the orbit command.
+
+## 9. FAQ
+
+**Which drone?** Whatever you have. Day one is writing down exactly what it is. The brief describes the function, never the parts.
+
+**Which model reads the trees?** Any vision model behind one interface, image in and JSON out. A small open model through Ollama on your laptop is the default and costs nothing. A hosted API, your own trained detector, or a Jetson on the aircraft are drop-in alternatives.
+
+**Do I have to spray?** Level three is spring. While building, water and marking dye only. Article 9 of EU Directive 2009/128 prohibits aerial spraying of plant-protection products except under national derogation, and LEGAL.md states what the Czech authorities allow.
+
+**Does the detector have to work?** If it sees nothing useful from the air, the log says so with the images that show it, and the console with a person deciding is the product. That is a valid submission.
+
+**Can a partner join?** Yes, on any piece; the console is the natural one. The partner's name goes on the repository for that piece.
+
+**What if I run out of time?** Submit what exists with a status line that tells the truth. A repository with one real flight, a coloured map and an honest README beats an unfinished level two.
+
+**Where do I ask questions?** The weekly check-in. Between check-ins: the Dronecode Discord for PX4 and MAVSDK, the ArduPilot forum, the OpenDroneMap forum, the DeepForest issues page.
 
 ## Appendix
 
