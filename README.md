@@ -4,6 +4,28 @@ Brief for Ilian. Three weeks, one open-source project, published. September 2026
 
 ## Definitions
 
+Open source. Software whose code is public, under a licence that lets anyone read, use, change and share it. Most of the tools in this brief are open source. This project will be too.
+
+Licence. The file that says what others may do with your code. MIT lets anyone do almost anything with attribution. Apache-2.0 is similar with a patent clause. AGPL, used by OpenDroneMap and Ultralytics, requires that changes are shared under the same terms.
+
+Git. The tool that records every change to a folder of files, with who made it and when. A commit is one recorded change with a one-sentence message. A branch is a parallel line of changes. Git runs on your laptop.
+
+GitHub. The website where git folders are stored and shown publicly. A repository, or repo, is one project on it: the code, the README, the history. Your GitHub profile is the list of your repositories and is what employers open first.
+
+README. The first file a visitor reads, shown on the repository's front page. Written in Markdown, a plain-text format where # makes a heading and - makes a bullet.
+
+Issue. A numbered note on a repository: a bug, a task, a question. This project closes each level with an issue titled "done".
+
+Pull request, or PR. A proposed change to someone else's repository, reviewed before it is merged. A merged pull request to a project like ArduPilot is public proof of your work.
+
+Fork. Your own copy of someone else's repository, where you make changes before proposing them as a pull request.
+
+Star. A bookmark on a repository. Counts of stars are a rough measure of how many people use a project.
+
+Template repository. A repository that GitHub can copy in one click to start a new one with the same files. This hackathon ships one.
+
+CLAUDE.md. A file at the root of a repository that Claude Code reads at the start of every session: what the project is, the rules, where things stand.
+
 Aircraft. The drone you have. Make, model, weight, payload margin, flight time, camera, sprayer.
 
 Flight controller. The board inside the aircraft that keeps it in the air. It runs a flight stack: PX4 or ArduPilot, which are open, or DJI's own, which is closed.

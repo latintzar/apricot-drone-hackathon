@@ -16,6 +16,16 @@ Fellowship. Money paid to an individual to build or study, with no company requi
 
 Hub. A city where the funds, the companies and the engineers concentrate.
 
+Open source. Public code under a licence that lets anyone use and change it. Defined with the rest of the GitHub terms in the hackathon brief.
+
+## How hiring works at these companies
+
+Most jobs at high-growth startups are never posted. A founder or CTO hires the person in front of them when the work is visible. The careers page shows a fraction of the roles that exist, and the ones for people your age rarely appear there at all.
+
+At nineteen, three things are rewarded and one is expected. Rewarded: initiative, shown by reaching out with a specific question and something built; curiosity, shown by knowing what the company does and what is hard about it; and making, shown by a repository that runs. Expected: openness to learn, which means asking, listening, and doing the thing they suggest by the date you said.
+
+The application, in this world, is the repository and the email. The interview is the call where you run the replay and ask your questions. The offer is often an internship or a part-time role that was created for you after the call.
+
 ## Accelerators and fellowships
 
 Y Combinator, in San Francisco, is the one that matters most. It has run since 2005, funded Airbnb, Stripe, Dropbox, Coinbase and Reddit, and now takes batches four times a year from anywhere in the world, moves them to San Francisco for three months, and invests half a million dollars in each. A nineteen-year-old in Sofia with a repository that flies can apply. ycombinator.com/apply. Everything YC has learned is free: the Startup School videos at startupschool.org, which you will watch all of this year, one a day, and the YC Library at ycombinator.com/library. Their Requests for Startups page, ycombinator.com/rfs, says what they wish someone would build, and there is always a robotics line in it. The list of every company in every batch is at ycombinator.com/companies, and their open jobs at news.ycombinator.com/jobs. Those jobs are the exact target of this whole document. A YC company that just raised is hiring.
