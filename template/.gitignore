@@ -1,0 +1,8 @@
+.env
+*.jpg
+*.png
+*.mp4
+!media/*.gif
+perception/data/**
+perception/runs/**
+__pycache__/

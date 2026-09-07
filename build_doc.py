@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import os, sys, json, re, urllib.request
 AT = os.environ["ACCESS_TOKEN"]
-PAPER = {"red": 0.968, "green": 0.953, "blue": 0.918}; INK = {"red": 0.110, "green": 0.098, "blue": 0.090}; ACC = {"red": 0.788, "green": 0.322, "blue": 0.086}; CODEBG = {"red": 0.93, "green": 0.91, "blue": 0.87}
-BODY, DISP, MONO = "Work Sans", "Playfair Display", "JetBrains Mono"
+PAPER = {"red": 1, "green": 1, "blue": 1}; INK = {"red": 0, "green": 0, "blue": 0}; ACC = {"red": 0.3, "green": 0.3, "blue": 0.3}; CODEBG = {"red": 0.95, "green": 0.95, "blue": 0.95}
+BODY, DISP, MONO = "Arial", "Arial", "Courier New"
 def api(url, method="POST", body=None):
     h = {"Authorization": "Bearer " + AT, "Content-Type": "application/json"}
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method, headers=h)
@@ -42,11 +42,11 @@ def emit(md, idx):
             i+=1; block=[]
             while i<len(lines) and not lines[i].startswith("```"): block.append(lines[i]); i+=1
             i+=1
-            for k,bl in enumerate(block): para(bl if bl.strip() else " ", font=MONO, size=8.5, code=True, space_above=6 if k==0 else 0, space_below=8 if k==len(block)-1 else 0)
+            for k,bl in enumerate(block): para(bl if bl.strip() else " ", font=MONO, size=9, code=True, space_above=6 if k==0 else 0, space_below=8 if k==len(block)-1 else 0)
             continue
-        if l.startswith("# "): para(l[2:], named="TITLE", font=DISP, size=30, space_below=6, keep=True); i+=1; continue
-        if l.startswith("## "): para(l[3:], named="HEADING_1", font=DISP, size=20, space_above=22, space_below=6, keep=True); i+=1; continue
-        if l.startswith("### "): para(l[4:], named="HEADING_2", size=12.5, bold=True, space_above=14, space_below=4, keep=True); i+=1; continue
+        if l.startswith("# "): para(l[2:], named="TITLE", font=DISP, size=24, bold=True, space_below=6, keep=True); i+=1; continue
+        if l.startswith("## "): para(l[3:], named="HEADING_1", font=DISP, size=16, bold=True, space_above=18, space_below=6, keep=True); i+=1; continue
+        if l.startswith("### "): para(l[4:], named="HEADING_2", size=12, bold=True, space_above=12, space_below=4, keep=True); i+=1; continue
         m=re.match(r"^(\s*)([-*]|\d+\.)\s+(.*)$", l)
         if m:
             kind="BULLET_DISC_CIRCLE_SQUARE" if m.group(2) in "-*" else "NUMBERED_DECIMAL_ALPHA_ROMAN"
