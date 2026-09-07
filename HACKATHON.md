@@ -1,6 +1,6 @@
 # The Apricot Drone Hackathon
 
-Brief for Ilian. Three weeks, one open-source project, published. September 2026.
+Brief for Ilian. Three weeks. One open-source project, published. The submission is the link to the repository. September 2026.
 
 ## Definitions
 
@@ -56,7 +56,7 @@ Field note. One file per flight: conditions, plan, what happened, numbers, what 
 
 Replay. A recorded flight anyone can run through the software on a laptop with no drone.
 
-## The brief
+## What to achieve
 
 ### What to build
 
@@ -71,6 +71,8 @@ An open-source system for a drone that:
 
 The person decides at every step. The model reads first and proposes. Every tap is a label the model learns from.
 
+The finish line is a public repository that a stranger can open, understand in a minute, and run without a drone, plus a two-minute video and a project page. Level one complete is a pass. Level two complete is a strong submission. Level three is next spring.
+
 The first orchard is your aunt's garden in the Czech Republic. Your uncle flies it there from a one-page pack you write. The aircraft, camera, sprayer and laptop are the ones you have; this brief describes the function and never the parts. Day one is finding out exactly what you have and writing it down.
 
 ### The three levels
@@ -82,6 +84,10 @@ Level two, orbit and gallery. Each approved tree gets an orbit mission. PX4 has 
 Level three, treatment. The spray command executes on the sprayer the aircraft has. On PX4 or ArduPilot the pump is a servo or relay output; ArduPilot has a built-in sprayer function. On a DJI agricultural aircraft it goes through DJI's app and SDK. Spray water while building. A page called LEGAL states what the Czech authorities allow. Done when: a tap sprays a tree, the console shows progress and the stop works, and the record is written. Scheduled for spring, when the blossom shows the fungus.
 
 If the model sees nothing useful from the air, write that in the log with the images that show it. The console with a person deciding remains the product.
+
+## What to submit
+
+The submission is one link: the public repository. It has to contain the following, and the judging is on the four rules below.
 
 ### Deliverables
 
@@ -116,7 +122,7 @@ Term time, weekends: the model re-reading close-ups, the detector improving, the
 
 Each level closes with an issue on the repository titled "done", stating what works, what does not, and linking the field note. Twenty minutes a week on a screen share with me.
 
-## Resources
+## How to approach it
 
 ### Where the brain lives
 
