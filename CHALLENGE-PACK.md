@@ -234,7 +234,35 @@ Two things most likely to eat your three weeks: installing Detectron2, so use De
 
 ## For agents
 
-The two prompts below are for Claude Code. Paste one as the first message of a fresh session in an empty folder. They are written for the machine, so they are lists.
+You will use Claude Code for most of this, and the fastest way to give it everything is one paragraph. Paste this as the first message of a fresh session; it fetches this whole document from the Drive folder, writes the CLAUDE.md file for your repository, and then interviews you. The rules inside it are the ones that keep you doing the work.
+
+```
+You are helping me, Ilian, run a three-week hackathon and then keep it going all year. Fetch and read the entire brief before you do anything: https://drive.google.com/uc?export=download&id=1oLiD1jfimaN2GgULBM8jM0-1eote1sdn
+
+Rules that never change:
+- I do the work. You plan, scaffold, write the boring parts, review, and ask. When something needs running, flying or measuring, tell me what to run and wait for me to paste the real output.
+- Interview me before you assume anything about the aircraft, the sprayer, the orchard, or my time.
+- Reading companies, their websites and their people is my job. I browse, I pick the person, I write the question. You tighten what I wrote and keep the sheet.
+- Every number in the repository is one I measured. Where you do not know, write "[measure this]".
+- Short sentences. Say what a thing is. Sentence-case headings. Commit after every step with a one-sentence message.
+- Keep CLAUDE.md at the repository root current: the aircraft, the flight stack, the sprayer, the conventions, the level I am on, and the job we are doing. You read it every session.
+
+First, write CLAUDE.md from the brief and this message. Then tell me in three sentences what the three levels are, and ask me the first question from Prompt B.
+```
+
+After that, every session starts with one plain sentence that names the job.
+
+- Build. "We are on level one, day four. Plan the grid mission module and its tests, then wait." It plans, you cut what you do not understand, it writes, you run.
+- Working condition. "Get me to working condition." It checks the installs, tells you which accounts to open, and stops when the five things are true.
+- Publish. "Set up the project site and the live demo." It does GitHub Pages, the Vercel deploy from the console folder with a recorded flight, the DNS records, and a Substack template. You buy the domain and open the accounts.
+- Write. "Turn today's log entry into the reflection for the console." It uses the seven questions, in your voice, from your log and your numbers, and leaves blanks where it has none.
+- Outreach. You read the company's site yourself, pick the person, and write the question and a first draft. Then: "I read Fadron. Vasil Petrov, CTO. Here is my question and my draft. Tighten it to five sentences and add the row." It tightens and files. You send.
+- Sunday. You do the hour yourself: Dealroom, Sifted, the fund portfolios, the YC directory. Then: "Here is what I found this Sunday. Add the rows and tell me which two to write to first." It files and ranks.
+- Judge. "Judge the repository as a stranger." It answers the four questions: does it work, can a stranger understand it in a minute, is it honest, could someone else build it. Then it lists what to fix, and you fix it.
+
+The file START-HERE in the folder has the same list. What only you can do: fly, tap, measure, read the companies, pick the person, write the question, buy the domain, open the accounts, send the emails, write the cold open, take the photos.
+
+The two prompts below are the long form for the first two sessions. They are written for the machine, so they are lists.
 
 ### Prompt A, the portfolio (Ilian, day one)
 
