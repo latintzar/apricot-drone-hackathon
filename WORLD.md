@@ -2,7 +2,7 @@
 
 Reference for Ilian. What exists, where it is, and what to do with it all year. September 2026.
 
-Start with the hackathon: github.com/latintzar/apricot-drone-hackathon. Press "Use this template" to begin. The repository it produces is what the rest of this document is built on: the thing employers open first, and the evidence every email, application and call below refers to.
+Two parts. Now: two weeks, one open-source project, published. Then: reach out, with the repository as the evidence, into the world described after it.
 
 ## Definitions
 
@@ -20,6 +20,76 @@ Hub. A city where the funds, the companies and the engineers concentrate.
 
 Open source. Public code under a licence that lets anyone use and change it. Defined with the rest of the GitHub terms in the hackathon brief.
 
+## Now: two weeks, the Apricot Drone Hackathon
+
+The full brief, the resources and a template repository are at github.com/latintzar/apricot-drone-hackathon. Press "Use this template" to begin; the README has the day-one questions, the paste block for Claude Code, the datasets and the links. This section is the summary.
+
+### What to build
+
+An open-source system for a drone that:
+
+1. Flies a grid over a small apricot orchard on its own and photographs every tree.
+2. Stitches the photos into a map, finds every tree, and colours each one: green for fine, amber for look closer, red for risk, with the type of risk named.
+3. Proposes which trees to inspect and from which side. The person approves, removes or adds with a tap.
+4. Flies to each approved tree, circles it at six to eight metres, and takes a photo every thirty degrees.
+5. Files every photo under the tree it was pointed at, and shows a gallery of tiles per tree. Tap a tile to open it, tap again to close.
+6. On a tap and a confirmation, flies above a chosen tree and sprays it, with a progress bar, a stop button that works, and a "spraying done" record with time, amount and a photo.
+
+The person decides at every step. The model reads first and proposes. Every tap is a label the model learns from.
+
+The finish line is a public repository that a stranger can open, understand in a minute, and run without a drone, plus a two-minute video and a project page. Level one complete is a pass. Level two complete is a strong submission. Level three is next spring.
+
+The first orchard is your aunt's garden in the Czech Republic. Your uncle flies it there from a one-page pack you write. The aircraft, camera, sprayer and laptop are the ones you have; this brief describes the function and never the parts. Day one is finding out exactly what you have and writing it down.
+
+### The three levels
+
+Level one, survey and console. Grid flight at fixed height, geotagged photos, orthomosaic, tree crowns found, each tree given a number that stays the same on every flight. Each crown cropped and sent to a vision model with one question: what do you see, how sure are you, which of these diseases could it be. The answers colour the map and label each tree. The console shows the map, the proposals, and the taps. On day one the model is a small open vision model on your laptop through Ollama. Done when: the map is coloured from a real flight and a tap produces a mission file.
+
+Level two, orbit and gallery. Each approved tree gets an orbit mission. PX4 has orbit mode, ArduPilot has circle mode and loiter-turns with a region of interest, DJI's SDK has a point-of-interest mission. Every photo is filed under its tree by logging the tree number when the orbit is commanded and matching by timestamp. The console shows a tile gallery per tree. The model re-reads the close-ups and updates the colour and label. In parallel, a YOLO detector is trained on the crops and close-ups labelled by tapping. Done when: an approved tree produces close-ups in its gallery from a real flight, and a training run has a metrics table and a failure gallery.
+
+Level three, treatment. The spray command executes on the sprayer the aircraft has. On PX4 or ArduPilot the pump is a servo or relay output; ArduPilot has a built-in sprayer function. On a DJI agricultural aircraft it goes through DJI's app and SDK. Spray water while building. A page called LEGAL states what the Czech authorities allow. Done when: a tap sprays a tree, the console shows progress and the stop works, and the record is written. Scheduled for spring, when the blossom shows the fungus.
+
+If the model sees nothing useful from the air, write that in the log with the images that show it. The console with a person deciding remains the product.
+
+### What to submit
+
+The submission is one link: the public repository. It contains:
+
+1. The repository, public from day one. README with a story at the top, a true status line, a five-minute replay, the console, the mission code, the model with its training runs and failure gallery, HARDWARE.md with parts and prices, LEGAL.md, field notes, and the one-page pack for your uncle.
+2. A two-minute video: takeoff, the console, a tap, the aircraft moving, the close-up appearing.
+3. A media folder collected from day one: the aircraft on the grass with the orchard behind it, a ten-second takeoff clip, a screen recording of the console and one of the gallery saved as GIFs, the orthomosaic, a sick tree beside a healthy one, the failure gallery as a nine-image grid, the training curve, the wiring labelled, your uncle holding the pack next to the aircraft, the spray test. Phone in landscape, raw files kept.
+4. LOG.md. One entry per shipped thing: date, what shipped, what broke, the number that changed, one photo.
+5. Reflections. One per part, on the template in the guidance section.
+6. The project page and four Substack posts.
+
+### Rules
+
+1. The repository is public from day one and says nothing flies yet.
+2. Something ships every three days. A shipped thing is a commit, a log entry and a picture.
+3. Every number in the repository is one you measured. Unfinished work says "works up to step three".
+4. The pilot holds the controller and can abort at any moment.
+5. The brief describes the function, never the parts. Find out what you have and write it down first.
+6. Judged on four things in order: it works; a stranger understands it in a minute; it is honest; someone else could build it from what you wrote.
+7. Elena joins on any piece she picks. The console is the natural one. Her name goes on the repository for what she built.
+
+### The two weeks
+
+Days 1 to 2. Identify the aircraft, flight stack, camera path and sprayer. Get camera and GPS into your own code. Repository public, story and status line written. Console sketched on paper: the map, the trees, the three taps.
+
+Days 3 to 6. Grid mission planned in software, flown, photos geotagged, orthomosaic made. Trees found and coloured by the vision model. Proposals and taps working in the console, even before a tap can fly. First field note.
+
+Days 7 to 12. A tap flies: go to the tree, descend, circle, a photo every thirty degrees, return. Photos filed by tree, gallery built. A flight recorded for the replay. First dataset labelled, first detector trained, metrics table and failure gallery. Second field note.
+
+Days 13 to 14. README finished for what exists. Video cut. Reflections written. Project page published. Thirty emails sent.
+
+Term time, weekends: the model re-reading close-ups, the detector improving, the pack in your uncle's hands until his flight succeeds first time. Spring: level three.
+
+Each level closes with an issue on the repository titled "done", stating what works, what does not, and linking the field note. Twenty minutes a week on a screen share with me.
+
+## Then: reach out
+
+Once the repository is public with at least level one complete and a video, the outreach starts. Thirty emails, to named people, each with the link. The rest of this document is who they are, how they hire, and how to write to them.
+
 ## How hiring works at these companies
 
 Most jobs at high-growth startups are never posted. A founder or CTO hires the person in front of them when the work is visible. The careers page shows a fraction of the roles that exist, and the ones for people your age rarely appear there at all.
@@ -27,6 +97,24 @@ Most jobs at high-growth startups are never posted. A founder or CTO hires the p
 At nineteen, three things are rewarded and one is expected. Rewarded: initiative, shown by reaching out with a specific question and something built; curiosity, shown by knowing what the company does and what is hard about it; and making, shown by a repository that runs. Expected: openness to learn, which means asking, listening, and doing the thing they suggest by the date you said.
 
 The application, in this world, is the repository and the email. The interview is the call where you run the replay and ask your questions. The offer is often an internship or a part-time role that was created for you after the call.
+
+## The people to write to
+
+These are real companies, checked this week page by page, each with fresh money or fresh work and a founder who reads email. Sixteen names. The full list with sources and open roles is the appendix at the end, and the Sunday hour keeps it alive.
+
+In Bulgaria, start with Dronamics. Eleven Ventures backed them first, the EU just committed up to thirty million euros, and Konstantin Rangelov, the CTO, has eleven engineering roles open in Sofia. EnduroSat raised a hundred million dollars last year to build satellites and has a junior harness engineer role open, and their free Space Challenges bootcamp every July is the best month a Bulgarian engineering student can spend. Fadron at Sofia Tech Park design, code and manufacture their own long-range drones and took money from Neo Autonomy in February, which makes them the closest thing in the country to your project as a company. Nomadium Robotics are six people building a long-range VTOL with an AI payload, and six people always need a seventh. Aviosense build radar for drones and have embedded roles open now. D Aerospace build industrial drones on the same open flight stack you will use. ID Robots in Plovdiv run a fleet platform for autonomous drones on ArduPilot and PX4. Bronia put acoustic AI on drones, and their CEO has your degree from your university.
+
+In Europe, start with ABZ Innovation in Budapest, who build thirty-litre spraying drones with their own autonomy and raised seven million euros in January. They are the commercial version of what you are building, and your repository is the whole cover letter. Then the companies that hire students to fly and test: TYTAN in Munich keep a standing opening for a working student in flight testing, STARK have a flight-test intern role, Alpine Eagle want a working student to build drone prototypes, and Origin Robotics in Riga advertise a drone test pilot. Fly4Future in Prague, a spin-out of the university's multi-robot lab, want a test pilot who tunes PX4 and ArduPilot, which is you, an hour from your aunt. Korial in Darmstadt have fourteen student positions in AI and robot software. Flyability in Lausanne have a robotics internship open now, and Switzerland needs no visa from you. Auterion in Zurich are the company behind PX4, and for them a merged pull request is the email.
+
+For Elena, if she wants a list of her own, the same rule applies: companies doing things that are hard, with people who are awake. In Sofia there are three: Checkpoint Cardio, who stream heart signals from wearables to an AI centre and ran a trial across five European hospitals; CoLumbo in Varna, who read spine MRIs with a model the FDA cleared, and have a junior developer role open; and Kelvin Health, who find artery disease with a thermal camera and a model trained on their own patients. In the world: Oxford Nanopore, who sequence DNA on a device the size of a phone. Isomorphic Labs in London, designing drugs with the models that won a Nobel prize. Cradle in Amsterdam and Latent Labs in London, designing proteins. Bioptimus and Owkin in Paris, foundation models for biology and pathology. CMR Surgical in Cambridge, surgical robots. Recursion, running biology experiments with robots. And the wearables and diagnostics companies, which is where a device that sends packets to a hub turns into a career: Oura in Finland, Withings in Paris, Empatica in Milan, whose wristband is cleared to detect seizures, Ultrahuman, Neko Health in Stockholm, who scan a whole body in minutes, Huma in London, and Bloom Diagnostics in Zurich. Read what they publish. A repository with her name on the console or the hub is the letter to any of them.
+
+Two doors are bigger than any company. INSAIT in Sofia runs SURF, a paid summer research fellowship for undergraduates in computer vision and robotics, fifteen hundred euros a month with housing, applications in January. And ArduPilot has forty-seven open issues marked "good first issue" this week, a European developer call on Wednesday mornings, and a fund that gives a developer two hundred dollars for a sensor if he writes the driver. One merged pull request there says more than any email. The PX4 developer summit is in Prague on 7 to 9 October. Go.
+
+## How to write to them
+
+Read what a company builds until you have one real question, the kind only someone who does the work can answer. Then write five sentences: the line that proves you read their work, who you are, the repository with the number that makes it real, the question, and one ask. "I would like to learn how you do this and get involved. Could we talk for twenty minutes?" Under a hundred and fifty words, one link, to a named person. When they say yes, spend the call asking your questions and running the replay on a screen share, agree one next step with a date, and do it on the date. Thank them the same day. Make LinkedIn say what GitHub says, in the same words, with the drone in the photo, and post a field note after each stage.
+
+Then keep the list alive, because the company that raised money last week is the company hiring this week. How is at the end.
 
 ## Accelerators and fellowships
 
@@ -55,24 +143,6 @@ The people, reached by work. Open source first: the maintainers of PX4 and ArduP
 Building in public, fourth. Post the field notes, the console GIF, the Substack and the Show HN. Founders read Hacker News and X daily.
 
 The order, then: the hackathon and thirty emails, a merged pull request before February, SURF in January, and an internship at a company that builds.
-
-## The people to write to
-
-These are real companies, checked this week page by page, each with fresh money or fresh work and a founder who reads email. Sixteen names. The full list with sources and open roles is the appendix at the end, and the Sunday hour keeps it alive.
-
-In Bulgaria, start with Dronamics. Eleven Ventures backed them first, the EU just committed up to thirty million euros, and Konstantin Rangelov, the CTO, has eleven engineering roles open in Sofia. EnduroSat raised a hundred million dollars last year to build satellites and has a junior harness engineer role open, and their free Space Challenges bootcamp every July is the best month a Bulgarian engineering student can spend. Fadron at Sofia Tech Park design, code and manufacture their own long-range drones and took money from Neo Autonomy in February, which makes them the closest thing in the country to your project as a company. Nomadium Robotics are six people building a long-range VTOL with an AI payload, and six people always need a seventh. Aviosense build radar for drones and have embedded roles open now. D Aerospace build industrial drones on the same open flight stack you will use. ID Robots in Plovdiv run a fleet platform for autonomous drones on ArduPilot and PX4. Bronia put acoustic AI on drones, and their CEO has your degree from your university.
-
-In Europe, start with ABZ Innovation in Budapest, who build thirty-litre spraying drones with their own autonomy and raised seven million euros in January. They are the commercial version of what you are building, and your repository is the whole cover letter. Then the companies that hire students to fly and test: TYTAN in Munich keep a standing opening for a working student in flight testing, STARK have a flight-test intern role, Alpine Eagle want a working student to build drone prototypes, and Origin Robotics in Riga advertise a drone test pilot. Fly4Future in Prague, a spin-out of the university's multi-robot lab, want a test pilot who tunes PX4 and ArduPilot, which is you, an hour from your aunt. Korial in Darmstadt have fourteen student positions in AI and robot software. Flyability in Lausanne have a robotics internship open now, and Switzerland needs no visa from you. Auterion in Zurich are the company behind PX4, and for them a merged pull request is the email.
-
-For Elena, if she wants a list of her own, the same rule applies: companies doing things that are hard, with people who are awake. In Sofia there are three: Checkpoint Cardio, who stream heart signals from wearables to an AI centre and ran a trial across five European hospitals; CoLumbo in Varna, who read spine MRIs with a model the FDA cleared, and have a junior developer role open; and Kelvin Health, who find artery disease with a thermal camera and a model trained on their own patients. In the world: Oxford Nanopore, who sequence DNA on a device the size of a phone. Isomorphic Labs in London, designing drugs with the models that won a Nobel prize. Cradle in Amsterdam and Latent Labs in London, designing proteins. Bioptimus and Owkin in Paris, foundation models for biology and pathology. CMR Surgical in Cambridge, surgical robots. Recursion, running biology experiments with robots. And the wearables and diagnostics companies, which is where a device that sends packets to a hub turns into a career: Oura in Finland, Withings in Paris, Empatica in Milan, whose wristband is cleared to detect seizures, Ultrahuman, Neko Health in Stockholm, who scan a whole body in minutes, Huma in London, and Bloom Diagnostics in Zurich. Read what they publish. A repository with her name on the console or the hub is the letter to any of them.
-
-Two doors are bigger than any company. INSAIT in Sofia runs SURF, a paid summer research fellowship for undergraduates in computer vision and robotics, fifteen hundred euros a month with housing, applications in January. And ArduPilot has forty-seven open issues marked "good first issue" this week, a European developer call on Wednesday mornings, and a fund that gives a developer two hundred dollars for a sensor if he writes the driver. One merged pull request there says more than any email. The PX4 developer summit is in Prague on 7 to 9 October. Go.
-
-## How to write to them
-
-Read what a company builds until you have one real question, the kind only someone who does the work can answer. Then write five sentences: the line that proves you read their work, who you are, the repository with the number that makes it real, the question, and one ask. "I would like to learn how you do this and get involved. Could we talk for twenty minutes?" Under a hundred and fifty words, one link, to a named person. When they say yes, spend the call asking your questions and running the replay on a screen share, agree one next step with a date, and do it on the date. Thank them the same day. Make LinkedIn say what GitHub says, in the same words, with the drone in the photo, and post a field note after each stage.
-
-Then keep the list alive, because the company that raised money last week is the company hiring this week. How is at the end.
 
 ## The rest of the year
 

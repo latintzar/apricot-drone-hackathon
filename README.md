@@ -1,6 +1,6 @@
 # The Apricot Drone Hackathon
 
-Brief for Ilian. Three weeks. One open-source project, published. The submission is the link to the repository. September 2026.
+Brief for Ilian. Two weeks. One open-source project, published. The submission is the link to the repository. September 2026.
 
 ## Definitions
 
@@ -108,15 +108,15 @@ The submission is one link: the public repository. It has to contain the followi
 6. Judged on four things in order: it works; a stranger understands it in a minute; it is honest; someone else could build it from what you wrote.
 7. Elena joins on any piece she picks. The console is the natural one. Her name goes on the repository for what she built.
 
-### The three weeks
+### The two weeks
 
-Days 1 to 3. Identify the aircraft, flight stack, camera path and sprayer. Get camera and GPS into your own code. Repository public, story and status line written. Console sketched on paper: the map, the trees, the three taps.
+Days 1 to 2. Identify the aircraft, flight stack, camera path and sprayer. Get camera and GPS into your own code. Repository public, story and status line written. Console sketched on paper: the map, the trees, the three taps.
 
-Days 4 to 9. Grid mission planned in software, flown, photos geotagged, orthomosaic made. Trees found and coloured by the vision model. Proposals and taps working in the console, even before a tap can fly. First field note.
+Days 3 to 6. Grid mission planned in software, flown, photos geotagged, orthomosaic made. Trees found and coloured by the vision model. Proposals and taps working in the console, even before a tap can fly. First field note.
 
-Days 10 to 18. A tap flies: go to the tree, descend, circle, a photo every thirty degrees, return. Photos filed by tree, gallery built. A flight recorded for the replay. First dataset labelled, first detector trained, metrics table and failure gallery. Second field note.
+Days 7 to 12. A tap flies: go to the tree, descend, circle, a photo every thirty degrees, return. Photos filed by tree, gallery built. A flight recorded for the replay. First dataset labelled, first detector trained, metrics table and failure gallery. Second field note.
 
-Days 19 to 21. README finished for what exists. Video cut. Reflections written. Project page published. Thirty emails sent.
+Days 13 to 14. README finished for what exists. Video cut. Reflections written. Project page published. Thirty emails sent.
 
 Term time, weekends: the model re-reading close-ups, the detector improving, the pack in your uncle's hands until his flight succeeds first time. Spring: level three.
 
@@ -144,7 +144,7 @@ Working condition is reached when: the aircraft shows in QGroundControl with a G
 
 ### The reflection template
 
-One file per part, in a folder called reflections, written the day the part ships: the aircraft, the mission code, the console, the model, the field work, the pack, and one for the whole three weeks. Two hundred to four hundred words each, in this order:
+One file per part, in a folder called reflections, written the day the part ships: the aircraft, the mission code, the console, the model, the field work, the pack, and one for the whole two weeks. Two hundred to four hundred words each, in this order:
 
 1. What I thought this part would be, including how long.
 2. What it actually was: what broke, what surprised me, when it worked.
@@ -158,7 +158,7 @@ One file per part, in a folder called reflections, written the day the part ship
 
 A domain in your name. Under it, two things, both free to host. The project site on GitHub Pages from the docs folder: video at the top, the story, a picture per level, the map, the console GIF, the numbers, the reflections, the link to the code. The live demo on your own free Vercel account: the console loaded with a recorded flight, so anyone can tap a tree, open the gallery, tap spray and watch the bar fill against the log, with no drone and no login. Build the console so the same code runs live and replayed.
 
-Substack, four posts: day one, end of level one, end of the detector, "What I built in three weeks" with the video. The last one to Hacker News as "Show HN".
+Substack, four posts: day one, end of level one, end of the detector, "What I built in two weeks" with the video. The last one to Hacker News as "Show HN".
 
 ### Use Claude Code for these things
 
@@ -167,7 +167,7 @@ You have Claude Code for a week, and so does Elena. It plans, scaffolds, writes 
 Paste this as the first message of a fresh session. It fetches both documents, writes the CLAUDE.md for your repository, and interviews you.
 
 ```
-You are helping me, Ilian, run a three-week hackathon. Fetch and read the entire brief before you do anything: https://raw.githubusercontent.com/latintzar/apricot-drone-hackathon/main/README.md and then the second document, the world around it: https://raw.githubusercontent.com/latintzar/apricot-drone-hackathon/main/WORLD.md
+You are helping me, Ilian, run a two-week hackathon. Fetch and read the entire brief before you do anything: https://raw.githubusercontent.com/latintzar/apricot-drone-hackathon/main/README.md and then the second document, the world around it: https://raw.githubusercontent.com/latintzar/apricot-drone-hackathon/main/WORLD.md
 
 Rules that never change:
 - I do the work. You plan, scaffold, write the boring parts, review, and ask. When something needs running, flying or measuring, tell me what to run and wait for me to paste the real output.
@@ -352,7 +352,7 @@ Almond: not found.
 
 - ExifTool https://exiftool.org/ (13.49); **ExifRead** https://pypi.org/project/ExifRead/ (3.5.1, read-only, healthiest); piexif (frozen 2019, read/write); pyexiv2 (GPL-3, native dep). geopandas + `sjoin_nearest` https://geopandas.org/en/stable/docs/reference/api/geopandas.sjoin_nearest.html
 - Recipe: crowns (pixel) → georeference (`rasterio.transform.xy` or samgeo GeoJSON) → GeoDataFrame with `tree_id` → photo GPS points → **reproject both to UTM** → `sjoin_nearest(max_distance=15)` → group by `tree_id`.
-- Traps: degrees give nonsense distances; **the photo's GPS is the drone, not the tree** (on a 10 m orbit the neighbour wins) — project forward along `GPSImgDirection`/gimbal yaw or widen max_distance; **the shortcut: log \`tree_id\` + timestamp when you issue \`do_orbit\` and match photos by EXIF time window.** Exact, and the right call for three weeks.
+- Traps: degrees give nonsense distances; **the photo's GPS is the drone, not the tree** (on a 10 m orbit the neighbour wins) — project forward along `GPSImgDirection`/gimbal yaw or widen max_distance; **the shortcut: log \`tree_id\` + timestamp when you issue \`do_orbit\` and match photos by EXIF time window.** Exact, and the right call for two weeks.
 
 \#### 3.5 Companion computer
 
@@ -415,7 +415,7 @@ Genus word: **peckoviny**; apricot: **meruňka**. Czech sources: https://rlporta
 
 #### Two closing notes
 
-Most likely to sink the three weeks: installing Detectron2 (avoid detectree2 unless DeepForest boxes fail) and adopting ROS 2 (MAVSDK-Python covers the spec). Most time saved: PX4 SIH for zero-install simulation, and logging `tree_id` when you issue `do_orbit`.
+Most likely to sink the two weeks: installing Detectron2 (avoid detectree2 unless DeepForest boxes fail) and adopting ROS 2 (MAVSDK-Python covers the spec). Most time saved: PX4 SIH for zero-install simulation, and logging `tree_id` when you issue `do_orbit`.
 
 #### Addendum — pathogen sets verified by a second pass (2026-09-07)
 
