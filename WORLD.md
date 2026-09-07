@@ -2,6 +2,8 @@
 
 Reference for Ilian. What exists, where it is, and what to do with it all year. September 2026.
 
+Start with the hackathon: github.com/latintzar/apricot-drone-hackathon. Press "Use this template" to begin. The repository it produces is what the rest of this document is built on: the thing employers open first, and the evidence every email, application and call below refers to.
+
 ## Definitions
 
 Startup. A company built to grow fast, funded by investors who buy a share early.
