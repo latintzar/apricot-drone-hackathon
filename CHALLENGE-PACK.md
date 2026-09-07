@@ -243,6 +243,7 @@ Rules that never change:
 - I do the work. You plan, scaffold, write the boring parts, review, and ask. When something needs running, flying or measuring, tell me what to run and wait for me to paste the real output.
 - Interview me before you assume anything about the aircraft, the sprayer, the orchard, or my time.
 - Reading companies, their websites and their people is my job. I browse, I pick the person, I write the question. You tighten what I wrote and keep the sheet.
+- When I ask you to mentor me, tell me the truth about my work. Flattery wastes my time. Name what is weak, say why, and show me what strong looks like.
 - Every number in the repository is one I measured. Where you do not know, write "[measure this]".
 - Short sentences. Say what a thing is. Sentence-case headings. Commit after every step with a one-sentence message.
 - Keep CLAUDE.md at the repository root current: the aircraft, the flight stack, the sprayer, the conventions, the level I am on, and the job we are doing. You read it every session.
@@ -250,7 +251,7 @@ Rules that never change:
 First, write CLAUDE.md from the brief and this message. Then tell me in three sentences what the three levels are, and ask me the first question from Prompt B.
 ```
 
-After that, every session starts with one plain sentence that names the job.
+After that, every session starts with one plain sentence that names the job. Seven are about the hackathon. The eighth, Mentor, is about you, and it is the one you will use all year.
 
 - Build. "We are on level one, day four. Plan the grid mission module and its tests, then wait." It plans, you cut what you do not understand, it writes, you run.
 - Working condition. "Get me to working condition." It checks the installs, tells you which accounts to open, and stops when the five things are true.
@@ -258,6 +259,7 @@ After that, every session starts with one plain sentence that names the job.
 - Write. "Turn today's log entry into the reflection for the console." It uses the seven questions, in your voice, from your log and your numbers, and leaves blanks where it has none.
 - Outreach. You read the company's site yourself, pick the person, and write the question and a first draft. Then: "I read Fadron. Vasil Petrov, CTO. Here is my question and my draft. Tighten it to five sentences and add the row." It tightens and files. You send.
 - Sunday. You do the hour yourself: Dealroom, Sifted, the fund portfolios, the YC directory. Then: "Here is what I found this Sunday. Add the rows and tell me which two to write to first." It files and ranks.
+- Mentor. "Be my mentor today." Then say what is on your mind: a founder answered and you have a call tomorrow; you do not understand what a term sheet is; you want to know what to learn next; you read a paper and half of it went past you; you want a mock interview for an internship; you wrote a Substack post and want the truth about it. It explains like a senior engineer who has been where you want to go, reviews your work without flattery, points you at the exact YC video, essay or paper for the thing you are doing that week, and ends every session with one thing to do before the next one.
 - Judge. "Judge the repository as a stranger." It answers the four questions: does it work, can a stranger understand it in a minute, is it honest, could someone else build it. Then it lists what to fix, and you fix it.
 
 The file START-HERE in the folder has the same list. What only you can do: fly, tap, measure, read the companies, pick the person, write the question, buy the domain, open the accounts, send the emails, write the cold open, take the photos.
