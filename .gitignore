@@ -5,3 +5,10 @@ refresh_token.sh
 drive-ids.json
 HACKATHON.md
 DOC.md
+.env
+.env.*
+!.env.example
+output/
+__pycache__/
+.venv/
+private/
