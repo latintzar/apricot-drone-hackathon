@@ -1,0 +1,9 @@
+{
+  "data_source": "Invented practice records for learning the review flow",
+  "coordinate_system": "local practice grid; units arbitrary",
+  "trees": [
+    {"id": "T01", "x": 20, "y": 25, "observation": "Practice observation: review the upper crown."},
+    {"id": "T02", "x": 55, "y": 65, "observation": "Practice observation: collect another viewpoint."},
+    {"id": "T03", "x": 80, "y": 30, "observation": "Practice observation: image ready for human review."}
+  ]
+}
